@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="block"></div>
+    <script>
+      const dom = document.querySelector("body");
+      const blockDom = document.querySelector("#block");
+      dom.addEventListener("mousemove", (event) => {
+        console.log("event=", event);
+        blockDom.style.left = event.x + "px";
+        blockDom.style.top = event.y + "px";
+      });
+    </script>
+    <style>
+      body {
+        width: 50%;
+        height: 100vh;
+        border: 1px solid gray;
+      }
+      #block {
+        width: 100px;
+        height: 100px;
+        background-color: chartreuse;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+    </style>
+  </body>
+</html>
